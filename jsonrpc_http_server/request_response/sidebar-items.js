@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Method","The Request Method (VERB)"],["StatusCode","An HTTP status code (`status-code` in RFC 7230 et al.)."]],"mod":[["header","Headers container, and common header fields."]],"struct":[["Request","Simple client Request structure"],["Response","Simple server response structure"]]});

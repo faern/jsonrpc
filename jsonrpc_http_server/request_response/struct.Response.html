@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Response` struct in crate `jsonrpc_http_server`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Response">
+
+    <title>jsonrpc_http_server::request_response::Response - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>jsonrpc_http_server</a>::<wbr><a href='index.html'>request_response</a></p><script>window.sidebarCurrent = {name: 'Response', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>jsonrpc_http_server</a>::<wbr><a href='index.html'>request_response</a>::<wbr><a class='struct' href=''>Response</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/jsonrpc_http_server/request_response.rs.html#32-41' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Response {
+    pub code: <a class='enum' href='../../jsonrpc_http_server/request_response/enum.StatusCode.html' title='jsonrpc_http_server::request_response::StatusCode'>StatusCode</a>,
+    pub content_type: <a class='struct' href='../../jsonrpc_http_server/request_response/header/struct.ContentType.html' title='jsonrpc_http_server::request_response::header::ContentType'>ContentType</a>,
+    pub content: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub write_pos: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+}</pre><div class='docblock'><p>Simple server response structure</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.code' class='structfield'>
+                           <span id='code.v' class='invisible'>
+                           <code>code: <a class='enum' href='../../jsonrpc_http_server/request_response/enum.StatusCode.html' title='jsonrpc_http_server::request_response::StatusCode'>StatusCode</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>Response code</p>
+</div><span id='structfield.content_type' class='structfield'>
+                           <span id='content_type.v' class='invisible'>
+                           <code>content_type: <a class='struct' href='../../jsonrpc_http_server/request_response/header/struct.ContentType.html' title='jsonrpc_http_server::request_response::header::ContentType'>ContentType</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>Response content type</p>
+</div><span id='structfield.content' class='structfield'>
+                           <span id='content.v' class='invisible'>
+                           <code>content: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>Response body</p>
+</div><span id='structfield.write_pos' class='structfield'>
+                           <span id='write_pos.v' class='invisible'>
+                           <code>write_pos: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>Number of bytes already written</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../jsonrpc_http_server/request_response/struct.Response.html' title='jsonrpc_http_server::request_response::Response'>Response</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/jsonrpc_http_server/request_response.rs.html#43-98' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.empty' class='method'><span id='empty.v' class='invisible'><code>fn <a href='#method.empty' class='fnname'>empty</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>Create response with empty body and 200 OK status code.</p>
+</div><h4 id='method.ok' class='method'><span id='ok.v' class='invisible'><code>fn <a href='#method.ok' class='fnname'>ok</a>&lt;T:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;&gt;(response: T) -&gt; Self</code></span></h4>
+<div class='docblock'><p>Create response with given body and 200 OK status code.</p>
+</div><h4 id='method.host_not_allowed' class='method'><span id='host_not_allowed.v' class='invisible'><code>fn <a href='#method.host_not_allowed' class='fnname'>host_not_allowed</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>Create response for not allowed hosts.</p>
+</div><h4 id='method.unsupported_content_type' class='method'><span id='unsupported_content_type.v' class='invisible'><code>fn <a href='#method.unsupported_content_type' class='fnname'>unsupported_content_type</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>Create response for unsupported content type.</p>
+</div><h4 id='method.method_not_allowed' class='method'><span id='method_not_allowed.v' class='invisible'><code>fn <a href='#method.method_not_allowed' class='fnname'>method_not_allowed</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>Create response for disallowed method used.</p>
+</div><h4 id='method.invalid_cors' class='method'><span id='invalid_cors.v' class='invisible'><code>fn <a href='#method.invalid_cors' class='fnname'>invalid_cors</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>CORS invalid</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://hyperium.github.io/hyper/hyper/server/trait.Handler.html' title='hyper::server::Handler'>Handler</a>&lt;<a class='struct' href='https://hyperium.github.io/hyper/hyper/net/struct.HttpStream.html' title='hyper::net::HttpStream'>HttpStream</a>&gt; for <a class='struct' href='../../jsonrpc_http_server/request_response/struct.Response.html' title='jsonrpc_http_server::request_response::Response'>Response</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/jsonrpc_http_server/request_response.rs.html#99-134' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.on_request' class='method'><span id='on_request.v' class='invisible'><code>fn <a href='https://hyperium.github.io/hyper/hyper/server/trait.Handler.html#tymethod.on_request' class='fnname'>on_request</a>(&amp;mut self, _request: <a class='struct' href='https://hyperium.github.io/hyper/hyper/server/request/struct.Request.html' title='hyper::server::request::Request'>Request</a>&lt;<a class='struct' href='https://hyperium.github.io/hyper/hyper/net/struct.HttpStream.html' title='hyper::net::HttpStream'>HttpStream</a>&gt;) -&gt; <a class='struct' href='https://hyperium.github.io/hyper/hyper/http/struct.Next.html' title='hyper::http::Next'>Next</a></code></span></h4>
+<div class='docblock'><p>This event occurs first, triggering when a <code>Request</code> has been parsed.</p>
+</div><h4 id='method.on_request_readable' class='method'><span id='on_request_readable.v' class='invisible'><code>fn <a href='https://hyperium.github.io/hyper/hyper/server/trait.Handler.html#tymethod.on_request_readable' class='fnname'>on_request_readable</a>(&amp;mut self, _decoder: &amp;mut <a class='struct' href='https://hyperium.github.io/hyper/hyper/http/struct.Decoder.html' title='hyper::http::Decoder'>Decoder</a>&lt;<a class='struct' href='https://hyperium.github.io/hyper/hyper/net/struct.HttpStream.html' title='hyper::net::HttpStream'>HttpStream</a>&gt;) -&gt; <a class='struct' href='https://hyperium.github.io/hyper/hyper/http/struct.Next.html' title='hyper::http::Next'>Next</a></code></span></h4>
+<div class='docblock'><p>This event occurs each time the <code>Request</code> is ready to be read from.</p>
+</div><h4 id='method.on_response' class='method'><span id='on_response.v' class='invisible'><code>fn <a href='https://hyperium.github.io/hyper/hyper/server/trait.Handler.html#tymethod.on_response' class='fnname'>on_response</a>(&amp;mut self, response: &amp;mut <a class='struct' href='https://hyperium.github.io/hyper/hyper/server/response/struct.Response.html' title='hyper::server::response::Response'>Response</a>) -&gt; <a class='struct' href='https://hyperium.github.io/hyper/hyper/http/struct.Next.html' title='hyper::http::Next'>Next</a></code></span></h4>
+<div class='docblock'><p>This event occurs after the first time this handled signals <code>Next::write()</code>.</p>
+</div><h4 id='method.on_response_writable' class='method'><span id='on_response_writable.v' class='invisible'><code>fn <a href='https://hyperium.github.io/hyper/hyper/server/trait.Handler.html#tymethod.on_response_writable' class='fnname'>on_response_writable</a>(&amp;mut self, encoder: &amp;mut <a class='struct' href='https://hyperium.github.io/hyper/hyper/http/struct.Encoder.html' title='hyper::http::Encoder'>Encoder</a>&lt;<a class='struct' href='https://hyperium.github.io/hyper/hyper/net/struct.HttpStream.html' title='hyper::net::HttpStream'>HttpStream</a>&gt;) -&gt; <a class='struct' href='https://hyperium.github.io/hyper/hyper/http/struct.Next.html' title='hyper::http::Next'>Next</a></code></span></h4>
+<div class='docblock'><p>This event occurs each time the <code>Response</code> is ready to be written to.</p>
+</div><h4 id='method.on_error' class='method'><span id='on_error.v' class='invisible'><code>fn <a href='https://hyperium.github.io/hyper/hyper/server/trait.Handler.html#method.on_error' class='fnname'>on_error</a>(&amp;mut self, err: <a class='enum' href='https://hyperium.github.io/hyper/hyper/error/enum.Error.html' title='hyper::error::Error'>Error</a>) -&gt; <a class='struct' href='https://hyperium.github.io/hyper/hyper/http/struct.Next.html' title='hyper::http::Next'>Next</a></code></span></h4>
+<div class='docblock'><p>This event occurs whenever an <code>Error</code> occurs outside of the other events. <a href="https://hyperium.github.io/hyper/hyper/server/trait.Handler.html#method.on_error">Read more</a></p>
+</div><h4 id='method.on_remove' class='method'><span id='on_remove.v' class='invisible'><code>fn <a href='https://hyperium.github.io/hyper/hyper/server/trait.Handler.html#method.on_remove' class='fnname'>on_remove</a>(self, _transport: T)</code></span></h4>
+<div class='docblock'><p>This event occurs when this Handler has requested to remove the Transport.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "jsonrpc_http_server";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
